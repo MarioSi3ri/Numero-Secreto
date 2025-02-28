@@ -1,0 +1,2846 @@
+/* ESTILOS POR DEFECTO DE LA PÁGINA/JUEGO EN MODO ESCRITORIO (PC) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+/* Fondo de la página */
+body {
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen de fondo de la página */
+body::before {
+    background-image: url("img/futuristic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+/* Contenedor 1 o segundo elemento principal de la página */
+.container {
+    width: 960px;
+    height: 630px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid #1875E8;
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/blue.jpg");
+    background-size: 100% 100%;
+    position: relative;
+    transition-duration: 1s; /* Tiempo de transición del 'border-radius (hover)' */
+    animation: scaleStart 2s; /* Tiempo de la animación al cargar la página */
+}
+
+/* Estilo con el filtro del borde al Contenedor 1 al pasar el mouse */
+.container:hover {
+    -webkit-border-radius:0%;
+    border-radius:0%;
+    -webkit-box-shadow: 0px 0px 10px 7px #960000ea;
+    box-shadow: 0px 0px 10px 7px #960000ea;
+}
+
+/* Animación del Contenedor 1 al iniciar la página */
+@keyframes scaleStart {
+    0% {
+      /*transform: translateY(-200%);*/
+      transform: scale(0);
+    }
+}
+
+/* Estilo con el filtro del borde de la imagen de Dark Vader */
+.container__dark {
+    width: 400px;
+    height: 700px;
+    transition: filter 1s ease;
+    animation: scaleStart 2s; /* Tiempo de la animación al cargar la página */
+}
+
+/* Estilo con el filtro del borde de la imagen de Dark Vader al pasar el mouse */
+.container__dark:hover {
+    filter: drop-shadow(10px 5px 5px #960000ea);
+}
+
+/* Contenedor con la transición de las imágenes al final del juego */
+.container__imagevader {
+    transition: opacity 0.5s;
+}
+
+/* Estilo con el contenido del Contenedor 1 */
+.container__content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Estilo con el contenido funcional del texto del Contenedor 1 */
+.container__information {
+    flex: 1;
+    padding: 3rem;
+}
+
+/* Estilo con el diseño de los botones */
+.container__botton {
+    border-radius: 16px;
+    background: #050427;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    margin-top: 2rem;
+    cursor: pointer; /* Cambia el cursor a una mano */
+    transition-duration: 0.4s;
+    -ms-user-select: none; /* Evita la selección de texto */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Estilo con el diseño de los botones activos */
+.container__botton:enabled:hover,
+.container__botton:enabled:focus 
+.container__botton:enabled:active {
+    background: #070638f6;
+    cursor: pointer;
+}
+
+/* Estilo con el diseño de los botones bloqueados */
+.container__botton:disabled {
+    background: #2692f8;
+    pointer-events: none; /* Bloquea eventos al pasar el mouse por el botón bloqueado */
+}
+
+/* Estilo con el diseño del borde de los botones activos al pasar el mouse */
+.container__botton:enabled:hover {
+    -webkit-box-shadow: 0px 0px 10px 7px #1869ffea;
+    box-shadow: 0px 0px 10px 7px #1869ffea;
+    transition-duration: 1s;
+}
+
+/* Estilo con el diseño del borde de los botones activos al dar clic con tecla */
+.container__botton.active:enabled {
+    -webkit-box-shadow: 0px 0px 10px 7px #1869ffea;
+    box-shadow: 0px 0px 10px 7px #1869ffea;
+    transition-duration: 0s;
+}
+
+/* Estilo con el diseño del borde de los botones desactivados al dar clic con tecla */
+.container__botton.desactive:enabled {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+/* Estilo con el diseño general de los botones */
+.container__buttons {
+    display: flex;
+    gap: 2em;
+}
+
+/* Estilo con el diseño de la caja de entrada/texto */
+.container__input {
+    width: 100%;
+    height: 72px;
+    border-radius: 16px;
+    /*background-color: #c1edff;*/
+    background-color: #c1edff70;
+    /*border: none;*/
+    outline: none;
+    /*color: #063c7e;*/
+    color: #ffffff;
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 700;
+    /*font-family: 'Inter', sans-serif;*/
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+    
+    margin-top: .1rem; /* Margen entre el texto y el input */
+    display: inline-block;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Estilo con el diseño del placeholder en la caja de entrada/texto */
+.input__placeholder {
+    position: absolute;
+    text-transform: uppercase;
+    left: 15%;
+    padding: 20px 8px 20px;
+    /*padding: 18px 8px 0;*/
+    /*color: #68686880;*/
+    color: #ffffff9f;
+    transition: all 0.2s linear;
+    border: 2px solid transparent;
+    font-size: 24px;
+    /*font-family: 'Inter', sans-serif;*/
+    font-family: 'Chakra Petch', sans-serif;
+
+    text-align: center;
+    display: inline-block;
+}
+
+/* Contenedor con las funciones para animar el placeholder */
+.container__input:focus ~ span,
+.container__input:valid ~ span {
+    /*top: 450px;*/
+    /*top: 453px;*/
+    top: 464px;
+    left: 65px;
+    font-size: 14px;
+    border-radius: 3px;
+    /*background-color: #21212121;*/
+    /*background-color: #c1edff;*/
+    /*background-color: #c1edffb6;*/
+    /*background-color: #c1edffd8;*/
+    background-color: #c1edff00;
+    padding: 0 6px;
+    color: #ffffff8c;
+    /*color: #7ab3f9d1;*/
+    /*color: #063c7e;*/
+    /*color: #ffffff;*/
+    -ms-user-select: none; /* Evita la selección de texto */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Contenedor para cambiar el color del borde cuando el input está enfocado */
+.container__input:focus {
+    border-color: #007BFF;
+}
+
+/* Estilo que bloquea eventos al pasar el mouse por la caja de entrada */
+.container__input:disabled + .input__placeholder {
+    pointer-events: none;
+    display: none;
+}
+
+/* Contenedor con el color del Placeholder cuando se inactiva el input */
+.input__inactive::placeholder {
+    color: #ffffff8c;
+}
+
+/* Estilo con el contenido para evitar la selección de texto en algunos elementos de la página */
+.no__select {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Estilo con el diseño de los títulos */
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 69px;
+    padding-bottom: 3rem;
+}
+
+/* Estilo con la fuente de los párrafos y botones */
+p,
+button {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo con el color 'Aqua' aplicado a los números del contenido de la ventana 'Ayuda' */
+.colorAqua {
+    color: rgb(0, 255, 255);
+}
+
+/* Estilo del espaciado aplicado al texto del contenido de la ventana 'Ayuda' */
+.spacing {
+    line-height: 1.3; /* 130% del tamaño de la fuente */
+    animation: textBlue 1s 0.5s backwards;
+}
+
+/* Animación del texto del contenido de la ventana 'Ayuda'  */
+@keyframes textBlue {
+    /*0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }*/
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
+
+/* Estilo aplicado al texto final de la ventana 'Ayuda' */
+.colorBlue {
+    color: rgb(40, 117, 231);
+    /*animation: textBlue 2s 2s backwards;*/
+    display: inline-block; /* Para que el span se comporte como un bloque y acepte transformaciones */
+    animation: scale 2s, moveX 3.4s infinite;
+    /*animation: scale 2s, moveX 5s infinite;*/
+}
+
+/* Animación de entrada en escala del texto final (colorBlue) de la ventana 'Ayuda' */
+@keyframes scale {
+    0% {
+      /*transform: translateY(-200%);*/
+      transform: scale(0);
+    }
+}
+
+/* Animación de movimiento en X del texto final (colorBlue) de la ventana 'Ayuda' */
+@keyframes moveX {
+	50%{
+		-webkit-transform: translateX(-6px);
+	}
+}
+
+@-webkit-keyframes moveX {
+	50%{
+		-webkit-transform: translateX(-6px);
+	}
+}
+
+
+
+
+/* Estilo con el diseño de la fuente en las indicaciones arriba de la caja de entrada */
+.text__paragraph {
+    font-size: 27px;
+    font-weight: 400;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Estilo de la imagen con la Nave Imperial que aparece en el contenido de "¡Logrado!" */
+.container__imperial {
+    width: 100px;
+    height: 100px;
+}
+
+/* Estilo con el diseño del texto "¡Logrado!" */
+.container__text {
+    margin: 16px 0 16px 0;
+}
+
+/* Contenedor con el diseño del texto "¡Logrado!" en color azul
+.container__text-azul {
+    color: #0660ce;
+}*/
+
+/* Estilo con el contenido de la ventana modal "¡Logrado!" */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: introSW 3s ease forwards; /* Tiempo de la animación al abrir la ventana */
+}
+
+/* Animación al abrir la ventana modal de ¡Logrado! */
+@keyframes introSW {
+    from {
+    opacity: 1;
+    transform: scale(6);
+    }
+    to {
+    opacity: 1;
+    transform: scale(1);
+    }
+}
+
+/* Estilo con la animación de cierre de la ventana modal ¡Logrado! */
+.modal.modalWin {
+    /*animation: closeModalAccomplished 2s forwards;*/
+    animation: closeModalAccomplished 1.5s forwards;
+}
+
+/* Animación de cierre de la ventana modal ¡Logrado! */
+@keyframes closeModalAccomplished {
+    0% {
+    transform: scale(1);
+    opacity: 1;
+    }
+    50% {
+    transform: scale(0.1);
+    opacity: 0;
+    }
+    100% {
+    transform: scale(0);
+    opacity: 0;
+    }
+/*0% {
+    opacity: 1;
+    top: 0;
+    }
+100% {
+    opacity: 0;
+        /*filter: brightness(200%);*/
+    /*top: -50px;
+    }*/
+}
+
+/* Estilo con el diseño del botón de "¡Logrado!" */
+.container__modal {
+    border-radius: 16px;
+    background: #030f1f;
+    padding: 16px 24px;
+    width: 40%;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-left: 350px;
+    background-color: rgba(1, 1, 22, 0.1);
+    transition-duration: 0.7s; /* Transición al pasar el mouse por la palabra ¡Logrado! */
+}
+
+/* Estilo con el diseño al pasar el mouse por el botón de "¡Logrado!" */
+.container__modal:hover,
+.container__modal:focus {
+    color: rgb(247, 9, 9);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo con el contenido he imagen del modal ¡Logrado! */
+.modal__content {
+    background-color: #001d6b86;
+    margin: 0% auto;
+    padding: 20px;
+    border: 1px solid #010235bd;
+    background-image: url("img/futuristic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1.0;
+    z-index: 1000; /* Bloquea el contenido detrás o fuera del modal */
+}
+
+/* Estilo con las medidas de la nave del modal "¡Logrado!" */
+.container__empire {
+    width: 360px;
+    height: 360px;
+    opacity: 0.6;
+    margin-top: 160px;
+    margin-left: 560px;
+    animation: moveEmpire 15s linear infinite alternate; /* Duración de la animación */
+    /*transform: translateX(-50%); /* Centrar horizontalmente */
+}
+
+/* Animación de la secuencia de animación de la imagen con la nave Empire */
+@keyframes moveEmpire {
+    0% { transform: translateY(70px) rotate(-0deg); }
+    50% { transform: translateY(-0px) rotate(-0deg); }
+    100% { transform: translateY(70px) rotate(-0deg); }
+}
+
+/* Estilo con el diseño de la 'x' para cerrar la ventana modal ¡Logrado! */
+.close {
+    color: /*aqua #183a3a*/#434545;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1; /* Ajusta la altura de línea al mínimo */
+    transition-duration: 0.2s;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo con el diseño al seleccionar la x para cerrar la ventana modal ¡Logrado! */
+.close:hover,
+.close:focus {
+    color: #fd0808;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+/* Estilo con el diseño del contorno del texto en el contenido del background de ¡Logrado! */
+.wintext {
+    align-items: center;
+    position: absolute;
+    top: 1%;
+}
+
+/* Estilo con el diseño del texto en el contenido del background de ¡Logrado! */
+.wintext p {
+    margin: 0;
+    padding: 0.3em;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    color: #1278BF;
+    text-shadow: 0px 0px 9px #508AD3;
+    /*text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.50)/*rgba(0, 0, 0, 10)*/;
+    /*color: rgb(255, 0, 0)*/
+}
+
+/* Estilos triples con la animación del texto en el contenido del background de ¡Logrado! */
+/* Primer contenedor animado de Wintext */
+.wintext p:nth-child(1) {
+    /*background-color: lightseagreen;*/
+    animation-name: rotatingWintext-1;
+}
+  
+@keyframes rotatingWintext-1 {
+    0% {
+      transform: translateY(200%);
+    }
+    33% {
+      transform: translateY(100%);
+      opacity: 1;
+    }
+    34% {
+      opacity: 0;
+    }
+}
+
+/* Segundo contenedor animado de Wintext */
+.wintext p:nth-child(2) {
+    /*background-color: tomato;*/
+    animation-name: rotatingWintext-2;
+}
+  
+@keyframes rotatingWintext-2 {
+    33% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    66% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    67% {
+      opacity: 0;
+    }
+}
+  
+/* Tercer contenedor animado de Wintext */
+.wintext p:nth-child(3) {
+    /*background-color: cornflowerblue;*/
+    animation-name: rotatingWintext-3;
+}
+
+@keyframes rotatingWintext-3 {
+    66% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    99% {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+}
+
+/* MediaQueries para los tipos de pantalla a partir de 576px */
+@media screen and (max-width: 576px) {
+    .wintext {
+      font-size: 0.7rem;
+    }
+}
+
+
+
+
+/* Contenedor que bloquea/oculta el botón "¡Logrado!" hasta el final del juego */
+#openModal {
+    display: none;
+}
+
+/* Contenedor que bloquea/oculta el botón "Recargar página" hasta el final del juego */
+#reload {
+    display: none;
+}
+
+/* Estilo con el contenido del botón con '?' de ayuda */
+.container__help {
+    border-radius: 16px;
+    background-color: rgba(1, 1, 22, 0.1); /* Azul oscuro con 50% de transparencia */
+    padding: 10px 16px;
+    width: -1%;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    margin-top: -580px;
+}
+
+/* Estilo con el diseño del botón con '?' de ayuda cuando se acerca el mouse */
+.container__help:hover,
+.container__help:focus {
+    color: rgb(127, 138, 245);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo con el contenido general y contorno del modal de ayuda */
+.window__help {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajusta el ancho de la ventana */
+    height: 100%; /* Ajusta la altura de la ventana */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Bloquea el contenido detrás o fuera del modal */
+}
+
+/* Estilo con el diseño del contenido en la ventana modal de ayuda */
+.content__help {
+    background-color: rgba(0, 1, 17, 0.965);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    /*left: 35%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    /*animation: slideFromHelp 2s ease forwards; /* Tiempo de la animación al abrir la ventana */
+    animation: slideFromHelpSuccess 1.6s ease forwards;
+}
+
+/* Animación al abrir la ventana modal de ayuda */
+@keyframes slideFromHelpSuccess {
+    from {
+      /*transform: translateY(-200%);*/
+      top: -30%;
+      opacity: 5%;
+    }
+    to {
+      /*transform: translateX(-50%);*/
+      /*transform: translateY(-50%);*/
+      transform: translate(-50%, -50%);
+    }
+}
+
+/* Tiempo de animación de la ventana modal de Ayuda y de Aciertos */
+.window__help.closexModal, .window__successes.closexModal {
+    animation: closeModalWindows 1s 30s forwards;
+}
+
+/* Tiempo de animación de la ventana modal de Aciertos
+.window__successes.closexModal {
+    animation: closeModalWindows 1s 30s forwards;
+}*/
+
+/* Animación para cerrar las ventanas modales */
+@keyframes closeModalWindows {
+    from {
+        transform: translate(-0%);
+    }
+    to {
+        top: -100%;
+        opacity: 0%;
+    }
+}
+
+/* Tiempo de animación de la ventana interna de Ayuda
+.content__help.closeContent {
+    animation: closeModalWindowsInternal 1s forwards;
+}*/
+
+/* Tiempo de animación de la ventana interna de Ayuda y de Aciertos */
+.content__help.closeContent, .content__successes.closeContent {
+    /*animation: closeModalWindowsInternal 1s forwards;*/
+    animation: closeModalWindowsInternal .6s forwards;
+}
+
+/* Animación para cerrar la ventana interna de las ventanas modales */
+@keyframes closeModalWindowsInternal {
+    from {
+        transform: translate(-50%, -50%);
+    }
+    to {
+        top: -30%;
+        opacity: 10%;
+    }
+}
+
+/* Contenedor con el diseño del botón 'x' cerrar en el modal de ayuda */
+/*.close__help {
+    color: #fd0808;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1; /* Ajusta la altura de línea al mínimo */
+    /*width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
+    /*position: relative;
+    top: -515px;
+    right: -458px;
+}*/
+
+/* Estilo con el diseño del botón 'x' para cerrar la ventana modal de Ayuda */
+.close__help {
+    color: #fff;
+    font-size: 15px;
+    /* font-weight: bold; */
+    line-height: 1;
+    width: 45px;
+    height: 35px;
+    /*height: 30px;*/
+    /*border-radius: 9%;*/
+    border-radius: 5%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    /*position: relative;
+    top: -497px;
+    right: -435px;*/
+    background-color: rgb(40 117 231 / 0%);
+    border: none;
+}
+
+/* Estilo con el diseño del botón cerrar en la ventana modal Ayuda al pasar el mouse */
+.close__help:hover,
+.close__help:focus {
+    background-color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para centrar el texto en el modal de ayuda y de aciertos */
+.centered {
+    text-align: center;
+    /*animation: scale 3s;*/
+    opacity: 0;
+    /*animation: modalTitles 2s ease 0.5s forwards; /* Tiempo de la animación en el texto */
+    animation: modalTitles 1.6s ease 0.5s forwards;
+}
+
+/* Animación de aparición del texto en la ventana modal Ayuda */
+@keyframes modalTitles {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo con el tamaño de fuente de los números acertados de la ventana Aciertos */
+.style__successes {
+    font-size: 40px;
+}
+
+/* Estilo con el contenido del botón con '#' de Aciertos */
+.container__successes {
+    border-radius: 16px;
+    background-color: rgba(1, 1, 22, 0.1); /* Azul oscuro con 50% de transparencia */
+    padding: 10px 16px;
+    width: -1%;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+    margin-top: -580px;
+}
+
+/* Estilo con el diseño del botón con '#' de aciertos cuando se acerca el mouse */
+.container__successes:hover,
+.container__successes:focus {
+    color: rgb(127, 138, 245);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo con el contenido general y contorno de la ventana modal de Aciertos */
+.window__successes {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ajusta el ancho de la ventana */
+    height: 100%; /* Ajusta la altura de la ventana */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Bloquea el contenido detrás o fuera del modal */
+}
+
+/* Estilo con el diseño del contenido en la ventana modal de Aciertos */
+.content__successes {
+    background-color: rgba(0, 1, 17, 0.965);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 280px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    border: 1px solid #fff;
+    animation: slideFromHelpSuccess 1.6s ease forwards; /* Tiempo de animación al abrir la ventana */
+}
+
+/* Estilo con el diseño del botón 'x' para cerrar la ventana modal de Aciertos */
+.close__successes {
+    /*color: #fd0808;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1; /* Ajusta la altura de línea al mínimo */
+    /*width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace que el botón tenga forma circular */
+    /*position: absolute;
+    top: -20px;
+    right: -20px;*/
+    color: #fff;
+    font-size: 15px;
+    /* font-weight: bold; */
+    line-height: 1;
+    width: 45px;
+    height: 35px;
+    /*height: 30px;*/
+    /*border-radius: 5%;*/
+    border-radius: 10%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgb(40 117 231 / 0%);
+    border: none;
+}
+
+/* Estilo con el diseño del botón para cerrar la ventana modal de aciertos al pasar el mouse */
+.close__successes:hover,
+.close__successes:focus {
+    /*color: black;
+    text-decoration: none;
+    cursor: pointer;*/
+    background-color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para mostrar una etiqueta al pasar el mouse por el botón '#' de aciertos */
+.container__successes:hover::after {
+    content: "Números acertados"; /* Texto personalizado */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 5px 2px; /* Espaciado interno */
+    /*padding: 5px 10px;*/
+    border-radius: 5px; /* Borde redondeado */
+    font-size: 14px; /* Tamaño de fuente */
+    top: calc(3% + 5px); /* Posición */
+    /*top: calc(4.5% + 5px);*/
+    /*right: calc(19.3% + -352px);*/
+    right: calc(21.3% + -361px);
+    width: 15%;
+    transform: translateY(-50%);
+    z-index: 1; /* Coloca la etiqueta encima del botón */
+}
+
+/* Estilo para mostrar una etiqueta al pasar el mouse por el botón '?' de ayuda */
+.container__help:hover::after {
+    content: "Ayuda del juego";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    top: calc(3% + 5px);
+    /*left: calc(19.9% + -352px);*/
+    left: calc(19.9% + -331px);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Estilo para mostrar una etiqueta al pasar el mouse por el botón '¡Logrado!' */
+.container__modal:hover::after {
+    content: "Presiona la palabra o las teclas Alt + L para ver el logro";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Estilo para mostrar etiquetas de acuerdo al 'title' de los botones */
+.container__botton:hover::after {
+    content: attr(data-title); /* Mostrar etiqueta por cada tittle de un botón */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.733);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 60%;
+}
+
+/* Estilo con los diseños del icono de GitHub */
+.github {
+    display: flex;
+    transition-duration: 0.4s;
+}
+
+/* Estilo con el diseño al pasar el mouse por el icono de GitHub */
+.github:hover {
+    transform: scale(1.9);
+}
+
+/* Ocultar los controles predeterminados de audio */
+audio {
+    display: none;
+}
+  
+/* Estilo para los botones de audio personalizados */
+.custom-audio-controls button {
+    background-color: #fff0;
+    border: 2px solid #FFD700;
+    padding: 5px 10px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    /*margin-top: 2rem;*/
+    margin-top: 11rem;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
+  
+/* Estilo para los botones de audio personalizados al pasar el ratón */
+.custom-audio-controls button:hover {
+    /*background-color: #f0f0f0;*/
+    background-color: #000000;
+}
+
+/* Contenedor con los elementos de la barra de progreso base, antes de reproducir */
+.progress__container {
+    position: relative;
+    width: 15%;
+    height: 5px;
+    background: #cccccc36;
+    cursor: pointer;
+    margin-top: .5%; /* Espacio entre la barra de progreso y el botón para reproducir */
+}
+
+/* Contenedor con los elementos de la barra de progreso al reproducir la música */
+.progress__musicbar {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #ffd900a8; /* Color de la barra de progreso */
+}
+
+
+/* SECUENCIA DE ANIMACIÓN DEL LOGO 'STAR WARS' DE FINALIZACIÓN EN '¡LOGRADO!' */
+
+
+/*.star {
+    animation: star 10s ease-out infinite;
+}
+.wars {
+    animation: wars 10s ease-out infinite;
+}
+.byline span {
+    animation: spin-letters 10s linear infinite;
+}
+.byline {
+    animation: move-byline 10s linear infinite;
+}*/
+
+/* Propiedades de la animación */
+.star {
+    animation: star 10s ease-out;
+    animation-iteration-count: 2; /* La animación se repetirá dos veces hasta finalizar */
+}
+.wars {
+    animation: wars 10s ease-out;
+    animation-iteration-count: 2;
+}
+.titleLine span {
+    animation: spin-letters 10s linear;
+    animation-iteration-count: 2;
+}
+.titleLine {
+    animation: move-titleLine 10s linear;
+    animation-iteration-count: 2;
+}
+  
+/* 'Keyframes' para controlar la secuencia de animación */
+@keyframes star {
+0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(-0.75em);
+}
+20% {
+    opacity: 1;
+}
+89% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+}
+}
+  
+@keyframes wars {
+0% {
+    opacity: 0;
+    transform: scale(1.5) translateY(0.5em);
+}
+20% {
+    opacity: 1;
+}
+90% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+}
+}
+  
+@keyframes spin-letters {
+0%, 10% {
+    opacity: 0;
+    transform: rotateY(90deg);
+}
+30% {
+    opacity: 1;
+}
+70%, 86% {
+    transform: rotateY(0);
+    opacity: 1;
+}
+95%, 100% {
+    opacity: 0;
+}
+}
+  
+@keyframes move-titleLine {
+0% {
+    transform: translateZ(5em);
+}
+100% {
+    transform: translateZ(0);
+}
+}
+  
+/* Estilos generales y diseño
+body {
+    background: #000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+}*/
+
+
+.space-sw {
+    background-color: /*#000000;*/#090909;
+    margin: 0% auto;
+    padding: 20px;
+    border: 1px solid #010235bd;
+    background-image: url(img/spaceSW.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1.0;
+    top: 0%;
+    right: 0%;
+    background-size: 100% 82%;
+    animation: spaceSWOut 21s ease-in-out forwards;
+}
+
+
+@keyframes spaceSWOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+}
+
+
+/* Estilo que agrega las propiedades y el diseño con las funciones a las etiquetas y al 3D en el contenedor. */
+.star-wars {
+    perspective: 800px;
+    transform-style: preserve3d;
+}
+  
+.star-wars {
+    height: 17em;
+    left: 50%;
+    position: absolute;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    width: 34em;
+}
+  
+.titleLine span {
+    display: inline-block;
+}
+  
+img {
+    width: 100%;
+}
+  
+.star, .wars, .titleLine {
+    position: absolute;
+}
+  
+.star {
+    top: -0.75em;
+    opacity: 70%; /* Opacidad del logo al estar estático */
+}
+  
+.wars {
+    bottom: -0.5em;
+    opacity: 70%; /* Opacidad del logo al estar estático */
+}
+  
+.titleLine {
+    color: #fff;
+    font-family: "ITC Serif Gothic", Lato;
+    /*font-size: 2.25em;*/
+    font-size: 1.7em;
+    left: -2em;
+    letter-spacing: 0.4em;
+    right: -2em;
+    text-align: center;
+    text-transform: uppercase;
+    /*top: 29%;*/
+    top: 42%;
+}
+  
+/* 'Media queries' que se ajustan a diferentes tamaños de pantalla. */
+@media only screen and (max-width: 600px) {
+.star-wars {
+    font-size: 10px;
+}
+}
+  
+@media only screen and (max-width: 480px) {
+.star-wars {
+    font-size: 7px;
+}
+}
+
+
+/* SECUENCIA DE ANIMACIÓN DEL 'BACKGROUND' O FONDO DE LA PÁGINA (RECTÁNGULOS DE FONDO) */
+
+
+/* 'Keyframes' para controlar la secuencia de animación */
+@keyframes animate {
+/*0%{
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+}
+100%{
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+}*/
+0%{
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 10%;
+}
+35%{
+    opacity: 1;
+    border-radius: 50%;
+}
+100%{
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+}
+}
+
+/* Estilo con las propiedades del cuerpo del 'Background' y 'body' en general */
+body {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #041832;
+    overflow: hidden;
+}
+
+/* Estilo con las propiedades de las figuras del 'Background' con animación */
+body li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 157, 248, 0.2);
+    animation: animate 29s linear infinite;
+}
+body li:nth-child(0) {
+    left: 49%;
+    width: 83px;
+    height: 83px;
+    bottom: -83px;
+    animation-delay: 1s;
+}
+body li:nth-child(1) {
+    left: 79%;
+    width: 34px;
+    height: 34px;
+    bottom: -34px;
+    animation-delay: 5s;
+}
+body li:nth-child(2) {
+    left: 78%;
+    width: 77px;
+    height: 77px;
+    bottom: -77px;
+    animation-delay: 9s;
+}
+body li:nth-child(3) {
+    left: 3%;
+    width: 53px;
+    height: 53px;
+    bottom: -53px;
+    animation-delay: 7s;
+}
+body li:nth-child(4) {
+    left: 50%;
+    width: 68px;
+    height: 68px;
+    bottom: -68px;
+    animation-delay: 13s;
+}
+body li:nth-child(5) {
+    left: 62%;
+    width: 17px;
+    height: 17px;
+    bottom: -17px;
+    animation-delay: 2s;
+}
+body li:nth-child(6) {
+    left: 76%;
+    width: 3px;
+    height: 3px;
+    bottom: -3px;
+    animation-delay: 18s;
+}
+body li:nth-child(7) {
+    left: 77%;
+    width: 119px;
+    height: 119px;
+    bottom: -119px;
+    animation-delay: 23s;
+}
+body li:nth-child(8) {
+    left: 84%;
+    width: 32px;
+    height: 32px;
+    bottom: -32px;
+    animation-delay: 8s;
+}
+body li:nth-child(9) {
+    left: 64%;
+    width: 52px;
+    height: 52px;
+    bottom: -52px;
+    animation-delay: 30s;
+}
+body li:nth-child(10) {
+    left: 12%;
+    width: 15px;
+    height: 15px;
+    bottom: -15px;
+    animation-delay: 34s;
+}
+body li:nth-child(11) {
+    left: 62%;
+    width: 29px;
+    height: 29px;
+    bottom: -29px;
+    animation-delay: 47s;
+}
+body li:nth-child(12) {
+    left: 52%;
+    width: 134px;
+    height: 134px;
+    bottom: -134px;
+    animation-delay: 42s;
+}
+body li:nth-child(13) {
+    left: 65%;
+    width: 49px;
+    height: 49px;
+    bottom: -49px;
+    animation-delay: 41s;
+}
+body li:nth-child(14) {
+    left: 15%;
+    width: 88px;
+    height: 88px;
+    bottom: -88px;
+    animation-delay: 54s;
+}
+body li:nth-child(15) {
+    left: 32%;
+    width: 56px;
+    height: 56px;
+    bottom: -56px;
+    animation-delay: 11s;
+}
+body li:nth-child(16) {
+    left: 83%;
+    width: 14px;
+    height: 14px;
+    bottom: -14px;
+    animation-delay: 32s;
+}
+body li:nth-child(17) {
+    left: 14%;
+    width: 51px;
+    height: 51px;
+    bottom: -51px;
+    animation-delay: 35s;
+}
+body li:nth-child(18) {
+    left: 90%;
+    width: 38px;
+    height: 38px;
+    bottom: -38px;
+    animation-delay: 20s;
+    border: 1px solid rgb(0, 247, 255);
+}
+body li:nth-child(19) {
+    left: 8%;
+    width: 61px;
+    height: 61px;
+    bottom: -61px;
+    animation-delay: 15s;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+
+
+/* MÓVILES EN ORIENTACIÓN VERTICAL */
+
+
+
+/* Telefóno: Galaxy Fold & medidas generales */
+@media only screen and (min-width: 280px) and (max-width: 653px) and (orientation: portrait){
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+        
+p{
+    text-align: center;
+    font-size: 20px;
+}
+        
+nav{
+    position: static;
+}
+        
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+        
+.container__dark {
+    display: none;
+}
+        
+.text__paragraph {
+    font-size: 18.3px;
+    /* font-size: 19.4px; */
+}
+        
+.github {
+    left: 3%;
+    margin-top: 50%;
+    position: absolute;
+    font-size: 125%; /* Tamaño del icono de GitHub */
+}
+        
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+        
+#reload {
+    width: 100%;
+    font-size: 85%;
+}
+        
+.container__input {
+    width: 100%;
+}
+        
+.container__modal {
+    margin-left: 0px;
+}
+        
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+        
+.container__empire {
+    margin-left: 0%;
+    margin-top: 25%;
+}
+        
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+        
+.close__text {
+    margin-left: 93%;
+}
+        
+.content__help {
+    max-width: 239px;
+    width: 88%;
+    font-size: 77%;
+    max-height: 561px;
+    height: 86% /* Largo del diseño de la ventana */
+}
+        
+.close__help {
+    position: fixed;
+    top: -3.5%;
+    right: -7.5%;
+}
+        
+.style__successes {
+    font-size: 33px;
+}
+        
+.content__successes {
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+        
+.container__successes {
+    margin-top: 580px;
+    position: fixed;
+}
+        
+.close__successes {
+    top: 92%;
+    right: -2%;
+}
+        
+.container__successes:hover::after {
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+        
+.container__help:hover::after {
+content: "Presionar para ayuda";
+display: none;
+}
+        
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+        
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+
+}
+
+
+/* Telefónos con ancho máximo de 480px */
+@media screen and (max-width: 480px) and (orientation: portrait){
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+        
+p{
+    text-align: center;
+    font-size: 20px;
+}
+        
+nav{
+    position: static;
+}
+        
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+        
+.container__dark {
+    display: none; /* Oculta la imagen de Vader en estás medidas apróximadas */
+}
+        
+.text__paragraph {
+    font-size: 18.3px;
+    /* font-size: 19.4px; */
+}
+        
+.github {
+    left: 3%;
+    margin-top: 50%;
+    position: absolute;
+    font-size: 125%; /* Tamaño del icono de GitHub */
+}
+        
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+        
+#reload {
+    width: 100%;
+    font-size: 85%;
+}
+        
+.container__input {
+    width: 100%;
+}
+        
+.container__modal {
+    margin-left: 0px;
+}
+        
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+        
+.container__empire {
+    margin-left: 0%;
+    margin-top: 25%;
+}
+        
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+        
+.close__text {
+    margin-left: 93%;
+}
+        
+.content__help {
+    max-width: 239px;
+    width: 88%;
+    font-size: 77%;
+    max-height: 561px;
+    height: 86% /* Largo del diseño de la ventana */
+}
+        
+.close__help {
+    position: fixed;
+    top: -3.5%;
+    right: -7.5%;
+}
+        
+.style__successes {
+    font-size: 33px;
+}
+        
+.content__successes {
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+        
+.container__successes {
+    margin-top: 580px;
+    position: fixed;
+}
+        
+.close__successes {
+    top: 92%;
+    right: -2%;
+}
+        
+.container__successes:hover::after {
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+        
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+        
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+        
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+
+}
+
+
+/* Telefónos con ancho máximo de 500px */
+@media only screen and (max-width: 500px) and (orientation: portrait){
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+    
+p{
+    text-align: center;
+    font-size: 20px;
+}
+    
+nav{
+    position: static;
+}
+    
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+    
+.container__dark {
+    display: none;
+}
+    
+.text__paragraph {
+    font-size: 18.3px;
+    /* font-size: 19.4px; */
+}
+    
+.github {
+    left: 3%;
+    margin-top: 50%;
+    position: absolute;
+    font-size: 125%; /* Tamaño del icono de GitHub */
+}
+    
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+    
+#reload {
+    width: 100%;
+    font-size: 85%;
+}
+    
+.container__input {
+    width: 100%;
+}
+    
+.container__modal {
+    margin-left: 0px;
+}
+    
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+    
+.container__empire {
+    margin-left: 0%;
+    margin-top: 25%;
+}
+    
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+    
+.close__text {
+    margin-left: 93%;
+}
+    
+.content__help {
+    max-width: 239px;
+    width: 88%;
+    font-size: 77%;
+    max-height: 561px;
+    height: 86% /* Largo del diseño de la ventana */
+}
+    
+.close__help {
+    position: fixed;
+    top: -3.5%;
+    right: -7.5%;
+}
+    
+.style__successes {
+    font-size: 33px;
+}
+    
+.content__successes {
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+    
+.container__successes {
+    margin-top: 580px;
+    position: fixed;
+}
+    
+.close__successes {
+    top: 92%;
+    right: -2%;
+}
+    
+.container__successes:hover::after {
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+    
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+    
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+    
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+
+}
+
+
+/* Teléfonos con ancho máximo de 575px */
+@media only screen and (max-width: 575px) and (orientation: portrait){
+  h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 18.3px;
+    /* font-size: 19.4px; */
+}
+
+.github {
+    left: 3%;
+    margin-top: 50%;
+    position: absolute;
+    font-size: 125%; /* Tamaño del icono de GitHub */
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+
+#reload { /* AGREGADO */
+    width: 100%;
+    font-size: 85%;
+}
+
+.container__input {
+    width: 100%;
+}
+
+.container__modal {
+    margin-left: 0px;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+
+.container__empire {
+    margin-left: 0%;
+    margin-top: 25%;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    margin-left: 93%;
+}
+
+.content__help {
+    max-width: 239px;
+    width: 88%;
+    font-size: 77%;
+    max-height: 561px;
+    height: 86% /* Largo del diseño de la ventana */
+}
+
+.close__help {
+    position: fixed;
+    top: -3.5%;
+    right: -7.5%;
+}
+
+.style__successes { /* AGREGADO */
+    font-size: 33px;
+}
+
+.content__successes { /* AGREGADO */
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+
+.container__successes { /* AGREGADO */
+    margin-top: 580px;
+    position: fixed;
+}
+
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+
+.container__successes:hover::after { /* AGREGADO */
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+
+}
+
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px) and (orientation: portrait){
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+    
+p{
+    text-align: center;
+    /*font-size: 20px;*/
+    font-size: 23px;
+}
+    
+nav{
+    position: static;
+}
+    
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+    
+body::before {
+    background-size: 300%;
+}
+    
+.container__dark {
+    display: none;
+}
+    
+.text__paragraph {
+    font-size: 25px;
+}
+
+.font__icon {
+    font-size: 28px;
+}
+
+.github {
+    /*margin-top: 2%;*/
+    left: 3%;
+    margin-top: -12%;
+    position: absolute;
+    font-size: 170%; /* Tamaño del icono de GitHub */
+}
+    
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 115%;
+    padding: 16px 7px;
+}
+    
+#reload { /* AGREGADO */
+    width: 100%;
+    font-size: 115%;
+}
+    
+.container__input {
+    width: 100%;
+}
+    
+.container__modal {
+    margin-left: 0px;
+}
+    
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+    
+.container__empire {
+    margin-left: 30%;
+}
+    
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+    
+.close__text {
+    /*margin-left: 93%;*/
+    margin-left: 96%;
+}
+    
+.close__help {
+    position: fixed;
+    top: -4%;
+    right: -4%;
+}
+    
+.content__help {
+    width: 75%;
+    max-width: 560px;
+    font-size: 110%;
+    /*width: 60%;
+    max-width: 500px;*/
+}
+    
+.modal__content {
+    background-size: 300%;
+}
+    
+.numbers__found { /* AGREGADO */
+    font-size: 185%;
+}
+    
+.continue__playing { /* AGREGADO */
+    font-size: 140%;
+}
+    
+.line__successes { /* AGREGADO */
+    font-size: 150%;
+}
+    
+.style__successes { /* AGREGADO */
+    font-size: 52px;
+}
+    
+.content__successes { /* AGREGADO */
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+    
+.container__successes { /* AGREGADO */
+    margin-top: 580px;
+    position: fixed;
+    }
+    
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+    
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+    
+.container__successes:hover::after { /* AGREGADO */
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+    
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+
+}
+
+
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: portrait){
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+p{
+    text-align: center;
+    /*font-size: 20px;*/
+    font-size: 23px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+body::before {
+    background-size: 300%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 25px;
+}
+
+.font__icon {
+    font-size: 28px;
+}
+
+.github {
+    /*margin-top: 2%;*/
+    left: 3%;
+    margin-top: -12%;
+    position: absolute;
+    font-size: 170%; /* Tamaño del icono de GitHub */
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 115%;
+    padding: 16px 7px;
+}
+
+#reload { /* AGREGADO */
+    width: 100%;
+    font-size: 115%;
+}
+
+.container__input {
+    width: 100%;
+}
+
+.container__modal {
+    margin-left: 0px;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+}
+
+.container__empire {
+    margin-left: 30%;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    /*margin-left: 93%;*/
+    margin-left: 96%;
+}
+
+.close__help {
+    position: fixed;
+    top: -4%;
+    right: -4%;
+}
+
+.content__help {
+    width: 75%;
+    max-width: 560px;
+    font-size: 110%;
+}
+
+.modal__content {
+    background-size: 300%;
+}
+
+.numbers__found { /* AGREGADO */
+    font-size: 185%;
+}
+
+.continue__playing { /* AGREGADO */
+    font-size: 140%;
+}
+
+.line__successes { /* AGREGADO */
+    font-size: 150%;
+}
+
+.style__successes { /* AGREGADO */
+    font-size: 52px;
+}
+
+.content__successes { /* AGREGADO */
+    max-width: 95%;
+    width: 100%;
+    font-size: 85%;
+    max-height: 333px;
+    height: 53%;
+}
+
+.container__successes { /* AGREGADO */
+    margin-top: 580px;
+    position: fixed;
+}
+
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+
+.container__successes:hover::after { /* AGREGADO */
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+
+}
+
+
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px) and (orientation: portrait){
+  h1{
+    text-align: center;
+    font-size: 45px;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 35px;
+}
+
+.font__icon {
+    font-size: 30px;
+}
+
+.github {
+    /*margin-top: 2%;*/
+    left: 3%;
+    margin-top: -10%;
+    position: absolute;
+    font-size: 165%;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 130%;
+    padding: 16px 7px;
+}
+
+#reload { /* AGREGADO */
+    width: 100%;
+    font-size: 115%;
+}
+
+.container__input {
+    width: 100%;
+}
+
+.container__modal {
+    margin-left: 0px;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+    background-size: 300%;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    margin-left: 96%;
+}
+
+.close__help {
+    position: fixed;
+    top: -3.5%;
+    right: -2.3%;
+}
+
+.content__help {
+    width: 78%;
+    max-width: 770px;
+    font-size: 147%;
+    max-height: 625px;
+    height: 46%;
+}
+
+/*.numbers__found { /* AGREGADO */
+    /*font-size: 185%;
+}*/
+
+/*.continue__playing { /* AGREGADO */
+    /*font-size: 140%;
+}*/
+
+.line__successes { /* AGREGADO */
+    font-size: 150%;
+}
+
+.style__successes { /* AGREGADO */
+    font-size: 62px;
+}
+
+.content__successes { /* AGREGADO */
+    max-width: 95%;
+    width: 100%;
+    font-size: 110%;
+    max-height: 390px;
+    height: 53%;
+}
+
+.container__successes { /* AGREGADO */
+    margin-top: 580px;
+    position: fixed;
+}
+
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+
+.close__successes { /* AGREGADO */
+    top: 92%;
+    right: -2%;
+}
+
+.container__successes:hover::after { /* AGREGADO */
+    content: "Números acertados ¡Presiona!";
+    display: none;
+}
+
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+
+}
+
+
+/* Escritorio extra grande */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait){
+
+.container__empire {
+    margin-left: 30%;
+    margin-top: 0%;
+}
+
+body::before {
+    background-size: 300%;
+}
+
+}
+
+
+/* Escritorio extra grande 2 */
+@media only screen and (min-width: 1200px) and (max-width: 1280px) and (orientation: portrait){
+
+.container__empire {
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+body::before {
+    background-size: 160%;
+}
+
+}
+
+
+/* ESPECIAL - Telefóno: Galaxy Fold con 280px x 653px */
+@media only screen and (min-width: 280px) and (max-width: 280px) and (min-height: 653px) and (max-height: 653px) and (orientation: portrait) {
+h1 {
+    text-align: center;
+    font-size: 31px;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 45%;
+    font-size: 62%;
+    font-size: 74%;
+    padding: 16px 7px;
+    height: 62px;
+}
+
+.line__successes {
+    font-size: 10.5px;
+}
+
+.github {
+    left: 5%;
+}
+
+}
+
+
+
+/* MÓVILES EN ORIENTACIÓN HORIZONTAL */
+
+
+
+/* Telefónos, Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px) and (orientation: landscape){
+  h1{
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 1.5rem;
+  }
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 21px;
+}
+
+.github {
+    left: 3%;
+    margin-top: 6%;
+    position: absolute;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 68%;
+    padding: 16px 7px;
+}
+
+.container__input {
+    height: 5px;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.container__modal {
+    font-size: 15px;
+    margin-left: 30%;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+    background-size: 150%;
+}
+
+.container__empire {
+    margin-left: 32%;
+    margin-top: -10%;
+    width: 200px;
+    height: 200px;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    margin-left: 93%;
+}
+
+.close__help {
+    position: fixed;
+    top: 88%;
+    right: -2%;
+}
+  
+.content__help {
+    width: 80%;
+    font-size: 72%;
+    max-width: 500px;
+    height: auto;
+}
+
+.container__help {
+    margin-top: -36%;
+    margin-left: 82%;
+}
+
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+   
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+   
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+
+}
+
+
+/* ESPECIAL - Telefóno: Galaxy Fold con 653px x 280px */
+@media only screen and (min-width: 653px) and (max-width: 653px) and (min-height: 280px) and (max-height: 280px) and (orientation: landscape) {
+.close__help {
+    position: fixed;
+    top: 84%;
+    right: 0%;
+}
+            
+}
+
+
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) and (orientation: landscape){
+  h1{
+    text-align: center;
+    font-size: 27px;
+    padding-bottom: 1.5rem;
+  }
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+body::before {
+    background-size: 300%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 21px;
+}
+
+.github {
+    left: 3%;
+    margin-top: 0%;
+    position: absolute;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 68%;
+    padding: 16px 7px;
+}
+
+.container__input {
+    height: 5px;
+    padding: 1.5rem;
+}
+
+.container__modal {
+    font-size: 15px;
+    margin-left: 30%;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+    background-size: 100%;
+}
+
+.container__empire {
+    margin-left: 36%;
+    margin-top: -12%;
+    width: 200px;
+    height: 200px;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    margin-left: 96%;
+}
+
+.close__help {
+    position: fixed;
+    top: 90%;
+    right: -3%;
+}
+
+.content__help {
+    width: 90%;
+    font-size: 88%;
+    max-width: 500px;
+    height: 91%;
+}
+
+.container__help {
+    margin-top: -36%;
+    margin-left: 82%;
+}
+
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+ 
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+ 
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+
+}
+
+
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px) and (orientation: landscape){
+  h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+p{
+    text-align: center;
+    font-size: 20px;
+}
+
+nav{
+    position: static;
+}
+
+body, body::before, .container__content, .container, .container__imperial, .container__information, .container__dark, .container__help, .modal {
+    width: 100%;
+}
+
+.container__dark {
+    display: none;
+}
+
+.text__paragraph {
+    font-size: 21px;
+}
+
+.github {
+    left: 1%;
+    margin-top: 12%;
+    position: absolute;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+
+.container__input {
+    width: 100%;
+}
+
+.container__modal {
+    margin-left: 0px;
+}
+
+.modal__content {
+    width: 100%;
+    position: fixed;
+    background-size: 160%;
+}
+
+.container__empire {
+    margin-left: 30%;
+    margin-top: -6%;
+}
+
+.wintext {
+    margin-top: 14%;
+    color: rgb(139 252 252 / 10%);
+    font-size: 170%;
+}
+
+.close__text {
+    margin-left: 93%;
+}
+
+.close__help {
+    position: fixed;
+    top: 93%;
+    right: -2%;
+}
+  
+.content__help {
+    width: 100%;
+    font-size: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.container__help {
+    margin-top: -35%;
+}
+
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+
+}
+
+
+/* ESPECIAL - Nest Hub: 1024x600 */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (min-device-height: 600px) and (max-device-height: 600px) and (orientation:landscape) {
+    
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.container__botton {
+    border-radius: 16px;
+    width: 50%;
+    font-size: 80%;
+    padding: 16px 7px;
+}
+    
+.container__botton:hover::after {
+    content: attr(data-title);
+    display: none;
+}
+         
+.container__help:hover::after {
+    content: "Presionar para ayuda";
+    display: none;
+}
+         
+.container__modal:hover::after {
+    content: "Presionar para ver el logro";
+    display: none;
+}
+    
+}
+
+
+/* Escritorio extra grande */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape){
+
+.container__empire {
+    margin-left: 35%;
+}
+
+body::before {
+    background-size: 150%;
+}
+
+}
+
+
+/* Escritorio extra grande 2 */
+@media only screen and (min-width: 1200px) and (max-width: 1280px) and (orientation: landscape){
+
+.container__empire {
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+body::before {
+    background-size: 160%;
+}
+
+}

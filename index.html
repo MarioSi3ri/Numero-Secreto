@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Number SW</title>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container">
+        <div class="container__content">
+            <div class="container__information" id="containerInformation">
+                <div class="container__text">
+                    <button type="button" class="container__modal no__select" id="openModal" title="Presiona para visualizar el retorno del imperio">¡Logrado!</button>
+                    <h1 class="no__select"></h1>
+                    <p class="text__paragraph"></p>
+                </div>
+
+                <input type="number" id="numberValue" oninput="limitNumber(this)" min="1" max="2" class="container__input" title="Ingresa un número del 1 al 10" required>
+                <span id="inputPlaceholder" class="input__placeholder">¡Ingresa número!</span>
+                
+                <div class="chute container__buttons">
+                    <button type="button" onclick="verifyAttempt();" class="container__botton" id="verify" data-title="Presiona el botón o la tecla Enter/Intro para verificar si tu número es el correcto">Verificar</button>
+                    <button type="button" onclick="restartGame();" class="container__botton" id="restart" data-title="Presiona el botón o la tecla Space/Espacio para un nuevo intento y completar los 7 números secretos" disabled>Nuevo intento</button>
+                    <button type="button" onclick="reloadGame();" class="container__botton" id="reload" data-title="Presiona el botón o la tecla F5 (FN + F5) para recargar la página y jugar de nuevo">Recargar página</button>
+                    <div id="windowModal" class="modal">
+                        <div class="modal__content" id="modalContent">
+                        <span class="close no__select" id="closeModal" title="Presiona la X o la tecla Backspace/Atrás para cerrar">&times;</span>
+                        <div class="wintext no__select">
+                            <p >¡EL IMPERIO RENACIÓ...</p>
+                            <p >...VADER VOLVIÓ!</p>
+                            <p >¡EL IMPERIO REGRESO!</p>
+                        </div>
+                        <img src="./img/empire.webp" alt="Nave imperial" class="container__empire no__select"/>
+                        <div class="space-sw no__select"></div>
+                        <div class="star-wars">
+                            <img src="https://cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" class="star no__select">
+                            <img src="https://cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" class="wars no__select">
+                            <h2 class="titleLine no__select" id="titleLine">The Empire Strikes Back</h2>
+                        </div>
+
+                        <audio controls id="music" loop>
+                            <source src="./aud/01. Main Title (Star Wars).mp3" type="audio/mp3">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                        <div class="custom-audio-controls">
+                            <button type="button" id="playButton" title="Main Title (Star Wars)">▶︎</button>
+                        </div>
+                        <div class="progress__container" onclick="seek(event)">
+                            <div class="progress__musicbar" id="progressMusicBar"></div>
+                        </div>
+
+                        </div>
+                    </div>
+                 <div class="window__help" id="windowHelp">
+                  <div class="content__help no__select" id="contentHelp">
+                    <h2 class="centered no__select">INSTRUCCIONES DEL JUEGO:</h2>
+                     </p><br><span class="spacing no__select">
+                        <strong><span class="colorAqua">1.</span></strong> Ingresa un número del 1 al 7 en el campo de entrada.</p>
+                        <strong><span class="colorAqua">2.</span></strong> Presiona el botón "<em>Verificar</em>" para comprobar si has adivinado el número secreto. El botón "<em>Nuevo intento</em>" permanece bloqueado.</p>
+                        <strong><span class="colorAqua">3.</span></strong> Si no ingresas ningún número y presionas el botón "<em>Verificar</em>", se bloqueará y se desbloqueará ingresando un número en el campo de entrada.</p>
+                        <strong><span class="colorAqua">4.</span></strong> Si adivinas correctamente el número secreto, el botón "<em>Nuevo intento</em>" se desbloqueará para que puedas intentarlo de nuevo, pero el botón "<em>Verificar</em>" se bloqueará hasta que lo intentes nuevamente.</p>
+                        <strong><span class="colorAqua">5.</span></strong> * Repite los pasos 1-4 hasta que completes los 7 números secretos. *</p>
+                        <strong><span class="colorAqua">6.</span></strong> Cuando completes los 7 números, aparecerá una logro galático. Ciérrala y podrás consultarla presionando en "<em>¡Logrado!</em>".</p>
+                        <strong><span class="colorAqua">7.</span></strong> Para jugar de nuevo desde el principio, presiona el botón "<em>Recargar página</em>".</p>
+                    </span><br>
+                        <p><center><strong><span class="colorBlue no__select">¡DISFRUTA EL JUEGO! :D</span></strong></center></p>
+                     <br></p>
+                    <button type="button" class="close__help no__select" id="closeWindow" title="Presiona la X o la tecla Backspace/Atrás para cerrar">X</button>
+                  </div>
+                 </div>
+                 <div class="window__successes" id="windowSuccesses">
+                    <div class="content__successes no__select" id="contentSuccesses">
+                      <h2 class="centered no__select numbers__found">NÚMEROS ENCONTRADOS:</h2>
+                       </p><br><span class="spacing no__select">
+                          <strong><span class="colorAqua">|</span></strong><center><p id="successes"><strong>Esperando aciertos...</strong></p></center>
+                          <center><strong><span class="colorAqua line__successes">______________________________________</span></strong></center><center><p id="message">¡Realiza tu primer intento!</p></center>
+                          <br></p>
+                          <strong><span class="colorAqua">|</span></strong>
+                          <p> </p>
+                        </span><br>
+                          <p><center><strong><span class="colorBlue no__select continue__playing">¡CONTINUA JUGANDO! :) </span></strong></center></p>
+                       <br></p>
+                      <button type="button" class="close__successes no__select" id="closeSuccesses" title="Presiona la X o la tecla Backspace/Atrás para cerrar">X</button>
+                    </div>
+                   </div>
+                </div>
+
+            </div>
+                <div class="github" id="gitHub" title="¡Visita mi GitHub!">
+                <a href="https://github.com/MarioSi3ri" target="_blank" rel="noopener" title="¡Enlace directo a mi GitHub!">
+                    <i class="fa-brands fa-github"></i>
+                </a> 
+                </div>
+
+                <div id="imagesTransitionAV" class="container__imagevader no__select">
+                    <img src="./img/dark.png" alt="Dark Vader" class="container__dark no__select" id="darkVader" />
+                </div>
+        </div>
+            <button type="button" class="container__help font__icon" id="buttonHelp" title="¿Necesitas ayuda para jugar? Presiona las teclas Alt + A">?</button>
+            <button type="button" class="container__successes font__icon" id="buttonSuccesses" title="¿Has adivinado números? Presiona las teclas Alt + S">#</button>
+    </div>
+    
+    <script src="app.js"></script>
+
+</body>
+
+</html>

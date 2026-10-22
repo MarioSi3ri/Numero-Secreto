@@ -29,6 +29,17 @@ Un divertido juego web interactivo de adivinanzas numéricas ambientado en el un
 
 ---
 
+## ❓ Ayuda y ¿Cómo Jugar?
+
+¿Necesitas asistencia táctica para superar este desafío galáctico? Sigue estas instrucciones para completar tu misión con éxito:
+
+1. **El Objetivo:** La computadora central ha seleccionado un número secreto. Tu misión es descifrarlo en el menor número de intentos posibles.
+2. **Sistema de Pistas:** Después de cada intento, el sistema de la interfaz te indicará si el número buscado es **mayor** o **menor** que el número ingresado.
+3. **Estrategia Recomendada:** Utiliza el método de división de rangos (por ejemplo, si el juego es del 1 al 100, comienza intentando con el 50 para reducir el margen de búsqueda a la mitad instantáneamente).
+4. **Reiniciar Misión:** Si completas el desafío o deseas comenzar de nuevo, pulsa el botón de reinicio para generar una nueva secuencia numérica.
+
+---
+
 ## 🛠️ Arquitectura y Tecnologías
 
 | Tecnología | Propósito |
@@ -71,7 +82,7 @@ Para probar y jugar localmente en tu equipo, solo necesitas un navegador web mod
    * **Windows:** ``` start index.html ```
    * **Linux:** ``` xdg-open index.html ```
 
-   ---
+---
    
 ## 📜 Licencia
 

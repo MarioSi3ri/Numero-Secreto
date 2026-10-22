@@ -11,6 +11,13 @@ Un divertido juego web interactivo de adivinanzas numéricas ambientado en el un
   <img src="https://img.shields.io/badge/Estado-Activo-brightgreen?style=for-the-badge" alt="Estado" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build Status">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
+  <img src="https://img.shields.io/badge/stars-✨✨✨-yellow.svg" alt="Stars">
+</p>
+
 ---
 
 ## 🎯 Sobre el Juego

@@ -2,7 +2,7 @@
 
 Un divertido juego web interactivo de adivinanzas numéricas ambientado en el universo de Star Wars, diseñado para poner a prueba tu intuición con una experiencia visual y auditiva única.
 
-🚀 **Sitio Web del juego:** [MarioSi3ri.Numero-Secreto](https://mariosi3ri.github.io/Numero-Secreto/)
+🚀 **Sitio Web del Juego:** [MarioSi3ri.Numero-Secreto](https://mariosi3ri.github.io/Numero-Secreto/)
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
@@ -76,3 +76,9 @@ Para probar y jugar localmente en tu equipo, solo necesitas un navegador web mod
 ## 📜 Licencia
 
 Este proyecto está bajo la Licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles sobre el uso del código.
+
+   ---
+
+## ⚠️ Disclaimer
+
+This project is a fan-made educational portfolio piece. All assets, images, and references related to **Star Wars** are the intellectual property of **Lucasfilm Ltd. and The Walt Disney Company**. This project is not affiliated with, endorsed, or sponsored by Lucasfilm or Disney. No copyright infringement intended.
